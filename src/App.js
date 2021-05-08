@@ -1,5 +1,6 @@
 import  { useState,useEffect } from 'react'
 import Card from './components/Card';
+
 import axios from 'axios';
 import './App.css';
 
@@ -50,21 +51,32 @@ const queryHandler=(e)=>{
   updateQuery(e.target.value)
   }
   
-  
+
 
 
   return (
-    <div className="App">
-      <input onChange={queryHandler} value={query} onKeyPress={search} type="text"/>
+    <div className="main">
+
+     <div className="banner">
+       <div className="banner-text"><h1>5-DAY FORECAST</h1></div>
+        <div className="banner-inputdiv"><input className="search-input" onChange={queryHandler} value={query} onKeyPress={search} type="text" placeholder="Search for a city.."/></div>
+     </div>
+     <div className="section">
+      
+    {(typeof weather != "undefined") ? (  <div className="city-header">
+      <h1>{weather.name}, {weather.sys.country}</h1>
+      </div>) : ("")}
+  
       {(typeof forecast != "undefined") ? (
         <div className="cards-container">
-           {forecast.daily.map((eachday, idx) => (
-  <Card key={idx} weather={weather} eachday={eachday} />
-))}
+          
+           {forecast.daily.slice(0,5).map((eachday, idx) => (
+              <Card key={idx} forecast={forecast} weather={weather} eachday={eachday} />
+                  ))}
         </div>
      
       ) : ("")}
-        
+        </div>
     
     </div>
 
