@@ -2,10 +2,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
 .banner {
   background-color: coral;
+  background-image: url("https://wallpaperpure.net/wp-content/uploads/2018/07/77920a56b3e1d439ee9da74ba97799c7.png");
+  background-position: bottom;
+  background-size: cover;
   text-align: center;
   padding: 40px;
 }
@@ -33,30 +37,78 @@
   /* justify-content: center; */
   padding-top: 20px;
   /* align-items: center; */
-  /* height: 60vh; */
-  background-color: magenta;
+  height: 79.6vh;
+  background-image: url("https://wallpaperpure.net/wp-content/uploads/2018/07/77920a56b3e1d439ee9da74ba97799c7.png");
+  background-position: center;
+  /* background-size: cover; */
+
+  background-color: lightskyblue;
 }
 
-.city-header {
+.current-weatherdiv {
   text-align: center;
-  border: 1px solid;
-  padding: 10px;
+  /* background-color: lightskyblue; */
+  padding-bottom: 35px;
   width: min(95%, 1280px);
   margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: center;
+}
+
+.left-weatherdata {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+
+  color: white;
+}
+
+.left-weatherdatatext {
+  text-align: left;
+}
+
+.left-weatherdatatext p:nth-of-type(1) {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.middle-weatherdata img {
+  width: 40%;
+}
+
+.middle-weatherdata {
+  color: white;
+}
+
+.right-weatherdata {
+  text-align: left;
+  padding-left: 30px;
+  border-left: 1px dotted white;
+  padding-bottom: 15px;
+  color: white;
+}
+
+.right-weatherdata h2 {
+  font-size: 2.5rem;
+  line-height: 2;
 }
 
 .cards-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  background-color: cyan;
-  gap: 1rem;
-  width: min(95%, 1280px);
+  /* background-color: white; */
+  border-radius: 10px;
+  padding: 10px;
+  gap: 2rem;
+  width: min(100%, 1280px);
   margin: auto;
   padding-top: 20px;
 }
 
 .card {
-  background-color: lightseagreen;
+  background-color: white;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -146,7 +198,7 @@
 .background-inforain img,
 .background-infosunny img {
   margin-top: 30px;
-  width: 60%;
+  width: 30%;
   object-fit: cover;
 }
 .temp-description {

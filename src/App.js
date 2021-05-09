@@ -1,5 +1,6 @@
 import  { useState,useEffect } from 'react'
 import Card from './components/Card';
+import Currentcard from './components/Currentcard';
 
 import axios from 'axios';
 import './App.css';
@@ -20,7 +21,7 @@ const [forecast, updateForecast] = useState()
 
 const search = (evt) => {
   if (evt.key === "Enter"){
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=79f6200497f5af385065493b315b6ea2`).then((res) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=79f6200497f5af385065493b315b6ea2`).then((res) => {
       const currentData = res.data;
       
       updateQuery("")
@@ -56,21 +57,20 @@ const queryHandler=(e)=>{
 
   return (
     <div className="main">
-
+        
      <div className="banner">
-       <div className="banner-text"><h1>5-DAY FORECAST</h1></div>
+       <div className="banner-text"><h1>GET THE DAILY FORECAST FOR 5 DAYS</h1></div>
         <div className="banner-inputdiv"><input className="search-input" onChange={queryHandler} value={query} onKeyPress={search} type="text" placeholder="Search for a city.."/></div>
      </div>
      <div className="section">
       
-    {(typeof weather != "undefined") ? (  <div className="city-header">
-      <h1>{weather.name}, {weather.sys.country}</h1>
+    {(typeof weather != "undefined") ? (  <div className="current-weatherdiv">
+      <Currentcard weather={weather}/>
       </div>) : null}
   
       {(typeof forecast != "undefined") ? (
         <div className="cards-container">
-          
-           {forecast.daily.slice(0,5).map((eachday, idx) => (
+          {forecast.daily.slice(0,5).map((eachday, idx) => (
               <Card key={idx} forecast={forecast} weather={weather} eachday={eachday} />
                   ))}
         </div>

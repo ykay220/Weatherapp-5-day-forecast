@@ -14,12 +14,6 @@ const forecastweekday=()=>{
 }
     
 
-    const forecastDate = ()=>{
-        const unixTime = eachday.dt;
-        const date = new Date(unixTime*1000);
-        const currentdate = date.toLocaleDateString("en-US");
-        return currentdate
-    }
   
 
     const icon = eachday.weather[0].icon
@@ -60,7 +54,7 @@ const forecastweekday=()=>{
         <div className="card">
            {weatherBackground()}
             <div className="additional-info">
-                <div className="additional-date">{forecastDate()}</div>
+                <div className="additional-date">Details</div>
                 <div className="additional-headers">
                     <div className="additional-title Wind">Wind</div>
                     <div className="additional-title Humidity">Humidity</div>
