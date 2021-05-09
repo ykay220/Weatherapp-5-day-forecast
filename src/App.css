@@ -46,13 +46,14 @@
   /* display: flex; */
   /* justify-content: center; */
   padding-top: 20px;
+  padding-bottom: 80px;
   /* align-items: center; */
-  height: 72.9vh;
+  min-height: 700px;
   background-image: url("https://wallpaperpure.net/wp-content/uploads/2018/07/77920a56b3e1d439ee9da74ba97799c7.png");
   background-position: center;
   /* background-size: cover; */
 
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
 }
 
 .predefined-container {
@@ -300,7 +301,7 @@
 
 @media (min-width: 1200px) {
   .cards-container {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 

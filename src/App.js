@@ -61,7 +61,7 @@ const queryHandler=(e)=>{
   return (
     <div className="main">
      <div className="banner">
-       <div className="banner-text"><h1>GET THE DAILY FORECAST FOR 5 DAYS</h1></div>
+       <div className="banner-text"><h1>GET THE DAILY FORECAST FOR 7 DAYS</h1></div>
        
         <div className="banner-inputdiv"><input className="search-input" onChange={queryHandler} value={query} onKeyPress={search} type="text" placeholder="Search for a city.."/></div>
      </div>
@@ -96,7 +96,7 @@ const queryHandler=(e)=>{
         }}
         
         >
-          {forecast.daily.slice(0,5).map((eachday, idx) => (
+          {forecast.daily.slice(0,6).map((eachday, idx) => (
               <Card key={idx} forecast={forecast} weather={weather} eachday={eachday} />
                   ))}
         </motion.div>
