@@ -65,7 +65,7 @@ const queryHandler=(e)=>{
       
     {(typeof weather != "undefined") ? (  <div className="city-header">
       <h1>{weather.name}, {weather.sys.country}</h1>
-      </div>) : ("")}
+      </div>) : null}
   
       {(typeof forecast != "undefined") ? (
         <div className="cards-container">
@@ -75,7 +75,7 @@ const queryHandler=(e)=>{
                   ))}
         </div>
      
-      ) : ("")}
+      ) : null}
         </div>
     
     </div>

@@ -41,6 +41,8 @@
   text-align: center;
   border: 1px solid;
   padding: 10px;
+  width: min(95%, 1280px);
+  margin: auto;
 }
 
 .cards-container {
@@ -63,47 +65,145 @@
 
 .background-info {
   text-align: center;
-  background-color: blue;
-  border-radius: 5px 5px 5px 0px;
+  background-color: grey;
+  color: white;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .background-infosunny {
   background-color: yellow;
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  color: white;
 }
 
 .background-inforain {
-  background-color: black;
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  color: white;
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #434343,
+    #000000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #434343,
+    #000000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .background-infocloud {
-  background-color: blue;
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  color: white;
+  background: #373b44; /* fallback for old browsers */
+  background: #373b44; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #4286f4,
+    #373b44
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #4286f4,
+    #373b44
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.background-info p {
+.background-infoclear {
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  color: white;
+  background: #a8ff78; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #78ffd6,
+    #a8ff78
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #78ffd6,
+    #a8ff78
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.background-info > p,
+.background-infoclear > p,
+.background-infocloud > p,
+.background-inforain > p,
+.background-infosunny > p {
   color: white;
   font-weight: bold;
-  padding-top: 20px;
+  padding-top: 35px;
   font-size: 1.2rem;
 }
 
-.background-info img {
-  padding: 20px;
-  width: 70%;
+.background-info img,
+.background-infoclear img,
+.background-infocloud img,
+.background-inforain img,
+.background-infosunny img {
+  margin-top: 30px;
+  width: 60%;
   object-fit: cover;
+}
+.temp-description {
+  padding-bottom: 30px;
+}
+
+.temp-description > p {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .additional-info {
-  background-color: lightsalmon;
-  border-radius: 5px;
+  background-color: white;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
 }
 
 .additional-headers,
 .additional-data {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border-bottom: 1px solid #eee;
+
   text-align: center;
 }
+.additional-headers {
+  padding-top: 5px;
+}
+
+.additional-date {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.additional-title {
+  color: grey;
+  margin: 0px 5px;
+  padding-top: 8px;
+}
+
+.Wind {
+  border-top: 1px solid blue;
+}
+
+.Humidity {
+  border-top: 1px solid red;
+}
+
+.UVI {
+  border-top: 1px solid yellow;
+}
+
+.additional-data {
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
 @media (min-width: 600px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
