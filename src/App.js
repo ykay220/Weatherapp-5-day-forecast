@@ -31,18 +31,9 @@ const getApi = (cityString) => {
 
 updateForecast(forecastData)
 
-
-
-
- 
 })
-
   })
-
-
-
-
-}
+    }
 
 
 
@@ -58,8 +49,6 @@ const search = (evt) => {
 }
 
 
-
-// const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const queryHandler=(e)=>{
   // console.log(e.target.value)
   updateQuery(e.target.value)
@@ -98,7 +87,7 @@ const queryHandler=(e)=>{
      
       ) : null}
         </div>
-    
+            <div className="footer-copyright">Yama Karimi</div>
     </div>
 
   );
