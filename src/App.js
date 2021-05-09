@@ -2,6 +2,7 @@ import  { useState,useEffect } from 'react'
 import Card from './components/Card';
 import Currentcard from './components/Currentcard';
 import { CircularProgress } from '@material-ui/core';
+import { motion } from 'framer-motion';
 
 import axios from 'axios';
 import './App.css';
@@ -74,16 +75,31 @@ const queryHandler=(e)=>{
     
      <div className="section">
       
-    {(typeof weather != "undefined") ? (  <div className="current-weatherdiv">
+    {(typeof weather != "undefined") ? (  <motion.div className="current-weatherdiv"
+    initial={{
+      opacity:0
+    }}
+    animate={{
+      opacity:1
+    }}
+    >
       <Currentcard weather={weather}/>
-      </div>) : null}
+      </motion.div>) : null}
   
       {(typeof forecast != "undefined") ? (
-        <div className="cards-container">
+        <motion.div className="cards-container"
+        initial={{
+          opacity:0
+        }}
+        animate={{
+          opacity:1
+        }}
+        
+        >
           {forecast.daily.slice(0,5).map((eachday, idx) => (
               <Card key={idx} forecast={forecast} weather={weather} eachday={eachday} />
                   ))}
-        </div>
+        </motion.div>
      
       ) : null}
         </div>
