@@ -32,6 +32,13 @@
   background-color: rgb(255, 255, 255);
 }
 
+.button-container {
+  width: min(95%, 1280px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .section {
   /* display: flex; */
   /* justify-content: center; */
@@ -43,6 +50,26 @@
   /* background-size: cover; */
 
   background-color: lightskyblue;
+}
+
+.predefined-container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  background-image: url("https://wallpaperpure.net/wp-content/uploads/2018/07/77920a56b3e1d439ee9da74ba97799c7.png");
+  background-position: bottom;
+  font-weight: bold;
+}
+
+.button-predefinedcity {
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px 5px 5px grey;
+}
+
+.button-predefinedcity:hover {
+  transition: all 0.3s;
+  transform: translateY(-0.25em);
 }
 
 .current-weatherdiv {
@@ -104,7 +131,6 @@
   gap: 2rem;
   width: min(100%, 1280px);
   margin: auto;
-  padding-top: 20px;
 }
 
 .card {
@@ -197,7 +223,7 @@
 .background-infocloud img,
 .background-inforain img,
 .background-infosunny img {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 30%;
   object-fit: cover;
 }

@@ -46,7 +46,7 @@ const forecastweekday=()=>{
                     </div>
                     
             </div>)
-        }
+        } 
     }
 
     return (
